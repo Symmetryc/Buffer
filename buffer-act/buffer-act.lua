@@ -8,7 +8,7 @@ return {
                         shift_x = 0;
                         shift_y = 0;
                         back = colors.white;
-                        text = colors.lightGray;
+                        text = colors.black;
                         blink = false;
                         write = function(self, _str)
                                 local act = self.act
