@@ -1,13 +1,6 @@
--- IBuffer API, by Symmetryc
-local function copy(_t)
-        local t = {}
-        for k, v in pairs(_t) do
-                t[k] = type(v) == "table" and copy(v) or v
-        end
-        return t
-end
+-- Buffer-Act, By Symmetryc
 return {
-        buffer = function()
+        new = function()
                 return {
                         act = {};
                         pos_x = 1;
@@ -68,34 +61,6 @@ return {
                                 end
                                 term.setCursorBlink(self.blink)
                                 return self
-                        end;
-                }
-        end;
-        new = function()
-                return {
-                        add = function(self, _buffer, _n)
-                                self[_n or #self + 1] = copy(_buffer)
-                                return self
-                        end;
-                        run = function(self)
-                                for k, v in pairs(self) do
-                                        if type(v) == "table" and v.draw then
-                                                v:draw()
-                                        end
-                                end
-                                local r = {}
-                                while not r[1] do
-                                        local event = {os.pullEvent()}
-                                        for k, v in pairs(self) do
-                                                if type(v) == "table" and v.fn then
-                                                        r = {v:fn(self, event)}
-                                                        if #r > 0 then
-                                                                break
-                                                        end
-                                                end
-                                        end
-                                end
-                                return unpack(r)
                         end;
                 }
         end;
