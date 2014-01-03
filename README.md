@@ -1,9 +1,10 @@
 Buffer
-=
+======
 Various Buffer APIs for ComputerCraft
 
-* Buffer-Str
-  Uses strings to optimize terminal writes, color changes, and cursor position.
-
-* Buffer-Act
-  Uses actions to remove render time and unnecessary calculations
+<dl>
+  <dt>Buffer-Str</dt>
+  <dd>Uses strings to optimize terminal writes, color changes, and cursor position</dd>
+  <dt>Buffer-Act</dt>
+  <dd>Uses actions to remove rendering and unnecessary calculations</dd>
+</dl>
