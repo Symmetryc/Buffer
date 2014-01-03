@@ -3,6 +3,7 @@ Buffer
 Various Buffer APIs for ComputerCraft
 
 * Buffer-Str
-** String Based
+  Uses strings to optimize terminal writes, color changes, and cursor position.
+
 * Buffer-Act
-* * Action Based
+  Uses actions to remove render time and unnecessary calculations
