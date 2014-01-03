@@ -1,4 +1,3 @@
-Buffer
-======
-
-Buffer API for ComputerCraft
+Buffer-Str
+=========
+String-based Buffer API for ComputerCraft
