@@ -1,3 +1,8 @@
-Buffer-Act
+Buffer
 =
-Action-based Buffer API for ComputerCraft
+Various Buffer APIs for ComputerCraft
+
+* Buffer-Str
+** String Based
+* Buffer-Act
+* * Action Based
