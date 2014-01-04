@@ -11,7 +11,7 @@ return {
 			write = function(self, _str)
 				local append, pos_x, pos_y, back, text = true, self.pos_x, self.pos_y, self.back, self.text
 				if pos_x ~= pos_x_ or pos_y ~= pos_y_ then
-                    act[#act + 1] = {tpos, pos_x, pos_y}
+					act[#act + 1] = {tpos, pos_x, pos_y}
 					append = false
 				end
 				if back ~= back_ then
