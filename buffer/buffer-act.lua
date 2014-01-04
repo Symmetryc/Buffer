@@ -7,16 +7,7 @@ return {
 			pos_x = 1, pos_y = 1;
 			back = colors.black, text = colors.white;
 			shift_x = 0, shift_y = 0;
-			blink = false; -- CHECK TO SEE IF term.setCursorBlink(nil) WILL ALSO WORK, IN WHICH CASE, NO NEED TO DEFINE THIS
-			-- CHECK
-			-- CHECK
-			-- REMINDER TO CHECK
-			--   CZECH
-			--   CZECH
-			--   CZECH
-			-- MY HANDS ARE TYPING WORDS
-			-- CHECK
-			-- CHECK
+			blink = false;
 			write = function(self, _str)
 				local append, pos_x, pos_y, back, text = true, self.pos_x, self.pos_y, self.back, self.text
 				if pos_x ~= pos_x_ or pos_y ~= pos_y_ then
