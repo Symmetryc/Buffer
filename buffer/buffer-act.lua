@@ -5,7 +5,7 @@ return {
 		local act, pos_x_, pos_y_, back_, text_ = {}
 		return {
 			pos_x = 1, pos_y = 1;
-			back = colors.black, text = colors.white;
+			back = 32768, text = 1;
 			shift_x = 0, shift_y = 0;
 			blink = false;
 			write = function(self, _str)
