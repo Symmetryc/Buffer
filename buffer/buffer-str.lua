@@ -1,11 +1,13 @@
 -- Buffer-Str, By Symmetryc
--- Load globals <REMINDER>
-local floor, log, log2, sub, rep, pairs = math.floor, math.log, math.log(2), string.sub, string.rep, pairs
+local log, log2, sub, rep, pairs = math.log, math.log(2), string.sub, string.rep, pairs
 local t_pos, t_back, t_text, t_write, t_blink = term.setCursorPos, term.setBackgroundColor, term.setTextColor, term.write, term.setCursorBlink
 local hex, cache, max_x, max_y = {}, nil, term.getSize()
 for i = 0, 15 do
 	hex[2 ^ i] = ("%x"):format(i)
 	hex[("%x"):format(i)] = 2 ^ i
+end
+local floor = function(_n)
+	return _n - _n % 1
 end
 local new = function(_w, _h, _color)
 	local buffer = {
@@ -16,6 +18,7 @@ local new = function(_w, _h, _color)
 		cur_back = "f", cur_text = "0";
 		shift_x = 0, shift_y = 0;
 		blink = false;
+		-- Blinking
 		draw_cache = function(self)
 		end;
 		draw_func = function(self)
@@ -28,7 +31,7 @@ local new = function(_w, _h, _color)
 		buffer.str[i] = rep("0", _w)
 		buffer.text[i] = rep(" ", _w)
 	end
-	buffer.write = function(_str) --
+	buffer.write = function(_str) -- check x && y
 	end
 	buffer.setCursorPos = function(_x, _y)
 		buffer.pos_x, buffer.pos_y = floor(_x), floor(_y)
@@ -37,6 +40,7 @@ local new = function(_w, _h, _color)
 		return buffer.pos_x, buffer.pos_y
 	end
 	buffer.scroll = function(_n) --
+		
 	end
 	buffer.isColor = function()
 		return buffer.color
